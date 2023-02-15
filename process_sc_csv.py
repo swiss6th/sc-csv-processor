@@ -20,7 +20,7 @@ def process_csv(
 			n['Name of sender/receiver'] = n['Notes']
 		return n
 
-	df = pandas.read_csv(input_file, index_col='Transaction ID', parse_dates=['Date'])
+	df = pandas.read_csv(input_file, index_col = 'Transaction ID', parse_dates = ['Date'])
 
 	# Filter dates (format: yyyy-MM-dd)
 	if start_date:
@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
 	import argparse
 
-	parser = argparse.ArgumentParser(description='Process transactions CSV from Square Cash for import into Wave accounting software.')
+	parser = argparse.ArgumentParser(description = 'Process transactions CSV from Square Cash for import into Wave accounting software.')
 	parser.add_argument('input_file', type = str, help = 'the input file (comma-separated values)')
 	parser.add_argument('output_file', type = str, help = 'the output file (comma-separated values)')
 	parser.add_argument('--start_date', type = str, help = 'the start date for transactions to keep (yyyy-MM-dd)')
